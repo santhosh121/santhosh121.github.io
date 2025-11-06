@@ -1,11 +1,459 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Santhosh Swargam</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Santhosh Swargam — Senior Data Scientist & ML Engineer. Portfolio: Databricks, MLOps, Generative AI, Agentic Systems." />
+  <title>Santhosh Swargam — Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b0d10;--panel:#12161b;--text:#e6edf3;--muted:#9aa7b1;--brand:#0ea5e9;--soft:#1a2027;--ok:#10b981;--warn:#f59e0b;--link:#6ea8fe
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; color:var(--text); background:radial-gradient(1200px 600px at 120% -10%, #19202a 0%, transparent 60%),radial-gradient(800px 500px at -20% 10%, #1a2430 0%, transparent 60%),var(--bg)}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px,92%);margin:auto}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.8);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #1f2937}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .brand-dot{width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 18px rgba(255,90,0,.6)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--text);opacity:.9}
+    .cta{background:var(--brand);color:#111;padding:8px 14px;border-radius:10px;font-weight:700;border:0}
+    .cta:hover{filter:brightness(1.05)}
+    /* Hero */
+    .hero{padding:72px 0 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,rgba(255,255,255,0.05)0px,rgba(255,255,255,0.05)1px,transparent 1px,transparent 40px),
+  repeating-linear-gradient(0deg,rgba(255,255,255,0.05)0px,rgba(255,255,255,0.05)1px,transparent 1px,transparent 40px);
+opacity:0.12;pointer-events:none;transform:translate3d(var(--gx1,0px),var(--gy1,0px),0)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(14,165,233,0.45),transparent 60%);mix-blend-mode:screen;pointer-events:none;transform:translate3d(var(--gx2,0px),var(--gy2,0px),0)}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #263140;border-radius:999px;color:var(--muted);font-size:14px}
+    h1{margin:10px 0 8px;font-size:48px;line-height:1.1}
+    .subtitle{color:var(--muted)}
+    .hero-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .card{background:var(--panel);border:1px solid #1f2937;border-radius:14px;padding:16px}
+    .card h3{margin:0 0 6px}
+    .grid{display:grid;gap:16px}
+    /* Sections */
+    section{padding:64px 0;border-top:1px solid #1f2937}
+    section h2{font-size:28px;margin:0 0 8px}
+    section p.lead{color:var(--muted);margin-top:0}
+    /* Skills */
+    .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .skill{background:var(--soft);border:1px solid #263140;border-radius:12px;padding:12px}
+    .skill b{display:block}
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .proj{background:var(--panel);border:1px solid #223040;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
+    .badge{font-size:12px;padding:4px 8px;border-radius:999px;background:#1f2530;border:1px solid #2a3647;color:#b7c4cf;display:inline-block}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid #2a3647;color:#9fb1bf}
+    .proj .actions{margin-top:auto;display:flex;gap:8px}
+    .ghost{background:transparent;border:1px solid #334155;color:var(--text);padding:8px 12px;border-radius:10px}
+    /* Timeline */
+    .timeline{position:relative;padding-left:28px}
+    .timeline:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--soft)}
+    .t-item{position:relative;margin:24px 0;padding-left:12px}
+    .t-item:before{content:"";position:absolute;left:-2px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(14,165,233,0.25)}
+    /* Contact */
+    form{display:grid;gap:12px;max-width:700px}
+    input,textarea{background:#0f141a;border:1px solid #2a3647;border-radius:10px;padding:12px;color:var(--text)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    footer{padding:32px 0;color:var(--muted);text-align:center}
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr 1fr}
+      .skills{grid-template-columns:1fr 1fr}
+      .hero-cards{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .projects,.skills,.hero-cards{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      h1{font-size:36px}
+      nav .nav-links{display:none}
+      .menu-btn{display:inline-flex}
+    }
+    .menu-btn{display:none;gap:8px;align-items:center;background:transparent;border:1px solid #2a3647;color:var(--text);padding:6px 10px;border-radius:10px}
+    .mobile-nav{display:none;flex-direction:column;gap:10px;padding:10px 0}
+    .mobile-nav a{padding:8px 0;border-bottom:1px dashed #223040}
+  .proj .logo{flex-shrink:0;border-radius:6px;box-shadow:0 0 0 1px #2a3647}
+  .proj .logo{flex-shrink:0;border-radius:6px;box-shadow:0 0 0 1px #2a3647}
+    /* Light theme */
+    :root[data-theme="light"]{
+      --bg:#ffffff;--panel:#f7f8fa;--text:#0b0d10;--muted:#475569;--brand:#0ea5e9;--soft:#eef2f7;--ok:#0f766e;--warn:#b45309;--link:#1d4ed8
+      }
+    .theme-btn{background:transparent;border:1px solid #2a3647;color:var(--text);padding:6px 10px;border-radius:10px}
+  .proj .logo{flex-shrink:0;border-radius:6px;box-shadow:0 0 0 1px #2a3647}
+    /* Light theme */
+    :root[data-theme="light"]{
+      --bg:#ffffff;--panel:#f7f8fa;--text:#0b0d10;--muted:#475569;--brand:#0ea5e9;--soft:#eef2f7;--ok:#0f766e;--warn:#b45309;--link:#1d4ed8
+      }
+    .theme-btn{background:transparent;border:1px solid #2a3647;color:var(--text);padding:6px 10px;border-radius:10px}
+    .meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px;margin-top:6px}
+    .meta .chip{border-color:#2a3647}
+  @keyframes gridDrift{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-20px,-20px,0)}}
+@keyframes glowDrift{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(15px,10px,0)}}
+@media (prefers-reduced-motion: reduce){
+  .hero::before,.hero::after{animation:none !important}
+}
+  .backtotop{position:fixed;right:20px;bottom:24px;z-index:60;background:var(--brand);color:#0b0d10;border:0;border-radius:999px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 10px 24px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.06) inset;cursor:pointer;opacity:0;transform:translateY(10px) scale(.96);pointer-events:none;transition:opacity .2s, transform .2s}
+.backtotop.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+  </style>
 </head>
 <body>
-  <h1>Hello! I'm Santhosh 👋</h1>
-  <p>Senior Data Scientist & ML Engineer</p>
-  <p>Welcome to my personal website.</p>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="brand-dot"></span> Santhosh Swargam</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a class="cta" href="https://github.com/santhoshswargam" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <div style="display:flex; gap:8px; align-items:center">
+          <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">🌙</button>
+          <button class="menu-btn" onclick="toggleNav()">Menu ▾</button>
+        </div>
+      </nav>
+      <div id="mobileNav" class="mobile-nav">
+        <a href="#about" onclick="toggleNav()">About</a>
+        <a href="#skills" onclick="toggleNav()">Skills</a>
+        <a href="#projects" onclick="toggleNav()">Projects</a>
+        <a href="#experience" onclick="toggleNav()">Experience</a>
+        <a href="#blog" onclick="toggleNav()">Blog</a>
+        <a href="#contact" onclick="toggleNav()">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero container" id="home">
+    <div>
+      <span class="chip">Databricks • MLOps • Generative AI • Agents</span>
+      <h1>Building production-grade ML systems that drive measurable business impact.</h1>
+      <p class="subtitle">Senior Data Scientist & ML Engineer — specializing in Databricks Lakehouse, feature stores, automated retraining, observability, and agentic LLM workflows.</p>
+      <div style="display:flex; gap:10px; margin-top:18px">
+        <a class="cta" href="#projects">See Projects</a>
+        <a class="ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="card">
+        <h3>🚚 Vehicle Allocation Optimizer</h3>
+        <p>Hybrid ML + optimization improved SLA adherence and lowered cost per delivery.</p>
+        <span class="badge">Case study</span>
+      </div>
+      <div class="card">
+        <h3>🧱 Feature Store + Retraining</h3>
+        <p>Reusable template for data→features→train→serve with automated rollouts.</p>
+        <span class="badge">Template</span>
+      </div>
+      <div class="card">
+        <h3>🤖 Enterprise RAG Agent</h3>
+        <p>Domain-aware agent that retrieves, reasons, and takes actions.</p>
+        <span class="badge">LLM / Agents</span>
+      </div>
+      <div class="card">
+        <h3>📈 Drift Monitoring</h3>
+        <p>Slice-based metrics, drift alerts, and retraining triggers.</p>
+        <span class="badge">Observability</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p class="lead">I design and deploy end-to-end ML systems on the Lakehouse — from data engineering and feature stores to serving, monitoring, and continuous improvement.</p>
+      <div class="grid" style="grid-template-columns:2fr 1fr">
+        <div class="card">
+          <h3>Principles</h3>
+          <ul>
+            <li>Business-first metrics and baselines</li>
+            <li>Simple, testable data pipelines</li>
+            <li>Fast feedback loops and observability</li>
+            <li>Automate everything that repeats</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quick Facts</h3>
+          <ul>
+            <li>Location: Toronto, Canada</li>
+            <li>Focus: Databricks, MLOps, LLM Agents</li>
+            <li>Open to: Consulting & collaborations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <p class="lead">Pragmatic, production-focused stack.</p>
+      <div class="skills">
+        <div class="skill"><b>Data & Compute</b> Databricks · Spark · Delta Lake</div>
+        <div class="skill"><b>MLOps</b> MLflow · Feature Store · DLT · Airflow</div>
+        <div class="skill"><b>Deployment</b> Docker · FastAPI · Model Serving</div>
+        <div class="skill"><b>LLM / Agents</b> LangChain · LlamaIndex · FAISS</div>
+        <div class="skill"><b>Cloud</b> Azure · AWS</div>
+        <div class="skill"><b>Analytics</b> Experiment design · Slice eval · Dashboards</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <p class="lead">Selected work and templates.</p>
+      <div class="projects">
+        <!-- Vehicle Allocation Optimizer -->
+        <article class="proj">
+          <div style="display:flex; align-items:center; gap:10px">
+            <img alt="Optimizer" class="logo" width="28" height="28" src="assets/logos/optimizer.svg" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 48 48\'><rect rx=\'10\' width=\'48\' height=\'48\' fill=\'%23ff5a00\'/><path d=\'M10 30h18l8-12\' stroke=\'white\' stroke-width=\'3\' fill=\'none\'/></svg>'"/><path d='M10 30h18l8-12' stroke='white' stroke-width='3' fill='none'/></svg>"/>
+            <span class="badge">Case Study</span>
+          </div>
+          <h3>Vehicle Allocation Optimization</h3>
+          <p>Reduced SLA violations and cost using hybrid demand/ETA models + solver-driven allocation.</p>
+          <div class="tags">
+            <span class="tag">Databricks</span><span class="tag">Spark</span><span class="tag">MLflow</span><span class="tag">Optimization</span>
+          </div>
+          <div class="actions">
+            <a class="cta" href="https://github.com/santhoshswargam/vehicle-allocation-optimizer" target="_blank" rel="noopener">Repo</a>
+            <a class="ghost" href="#" target="_blank" rel="noopener">Article</a>
+          </div>
+          <div class="meta gh-badges" data-owner="santhoshswargam" data-repo="vehicle-allocation-optimizer">
+            <span class="chip">⭐ <span class="star-count">—</span></span>
+            <span class="chip">Last commit: <span class="last-commit">—</span></span>
+          </div>
+        </article>
+
+        <!-- Feature Store + Retraining Template -->
+        <article class="proj">
+          <div style="display:flex; align-items:center; gap:10px">
+            <img alt="Feature Store" class="logo" width="28" height="28" src="assets/logos/feature-store.svg" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 48 48\'><rect rx=\'10\' width=\'48\' height=\'48\' fill=\'%23223040\'/><circle cx=\'16\' cy=\'16\' r=\'6\' fill=\'%23ff5a00\'/><circle cx=\'32\' cy=\'16\' r=\'6\' fill=\'white\'/><rect x=\'10\' y=\'28\' width=\'28\' height=\'8\' rx=\'4\' fill=\'white\'/></svg>'"/><circle cx='16' cy='16' r='6' fill='%23ff5a00'/><circle cx='32' cy='16' r='6' fill='white'/><rect x='10' y='28' width='28' height='8' rx='4' fill='white'/></svg>"/>
+            <span class="badge">Template</span>
+          </div>
+          <h3>Feature Store + Retraining</h3>
+          <p>End-to-end ML pipeline with automated retraining and canary rollout.</p>
+          <div class="tags"><span class="tag">Feature Store</span><span class="tag">DLT</span><span class="tag">Airflow</span></div>
+          <div class="actions">
+            <a class="cta" href="https://github.com/santhoshswargam/feature-store-retraining-template" target="_blank" rel="noopener">Repo</a>
+            <a class="ghost" href="#" target="_blank" rel="noopener">Docs</a>
+          </div>
+          <div class="meta gh-badges" data-owner="santhoshswargam" data-repo="feature-store-retraining-template">
+            <span class="chip">⭐ <span class="star-count">—</span></span>
+            <span class="chip">Last commit: <span class="last-commit">—</span></span>
+          </div>
+        </article>
+
+        <!-- Enterprise RAG Agent -->
+        <article class="proj">
+          <div style="display:flex; align-items:center; gap:10px">
+            <img alt="RAG Agent" class="logo" width="28" height="28" src="assets/logos/rag-agent.svg" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 48 48\'><rect rx=\'10\' width=\'48\' height=\'48\' fill=\'%231f2530\'/><g fill=\'white\'><circle cx=\'16\' cy=\'24\' r=\'4\'/><circle cx=\'32\' cy=\'14\' r=\'4\'/><circle cx=\'32\' cy=\'34\' r=\'4\'/><path d=\'M20 24h8M28 14v20\' stroke=\'%23ff5a00\' stroke-width=\'3\'/></g></svg>'"/><g fill='white'><circle cx='16' cy='24' r='4'/><circle cx='32' cy='14' r='4'/><circle cx='32' cy='34' r='4'/><path d='M20 24h8M28 14v20' stroke='%23ff5a00' stroke-width='3'/></g></svg>"/>
+            <span class="badge">LLM</span>
+          </div>
+          <h3>Enterprise RAG Agent</h3>
+          <p>Retrieves, reasons, and executes tasks over enterprise knowledge.</p>
+          <div class="tags"><span class="tag">LangChain</span><span class="tag">FAISS</span><span class="tag">FastAPI</span></div>
+          <div class="actions">
+            <a class="cta" href="https://github.com/santhoshswargam/enterprise-rag-agent" target="_blank" rel="noopener">Repo</a>
+            <a class="ghost" href="#" target="_blank" rel="noopener">Demo</a>
+          </div>
+          <div class="meta gh-badges" data-owner="santhoshswargam" data-repo="enterprise-rag-agent">
+            <span class="chip">⭐ <span class="star-count">—</span></span>
+            <span class="chip">Last commit: <span class="last-commit">—</span></span>
+          </div>
+        </article>
+
+        <!-- Model Monitoring Dashboard -->
+        <article class="proj">
+          <div style="display:flex; align-items:center; gap:10px">
+            <img alt="Monitoring" class="logo" width="28" height="28" src="assets/logos/monitoring.svg" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 48 48\'><rect rx=\'10\' width=\'48\' height=\'48\' fill=\'%231a2027\'/><polyline points=\'8,34 18,24 26,28 38,16\' stroke=\'%2310b981\' stroke-width=\'3\' fill=\'none\'/><circle cx=\'18\' cy=\'24\' r=\'3\' fill=\'white\'/><circle cx=\'38\' cy=\'16\' r=\'3\' fill=\'%23ff5a00\'/></svg>'"/><polyline points='8,34 18,24 26,28 38,16' stroke='%2310b981' stroke-width='3' fill='none'/><circle cx='18' cy='24' r='3' fill='white'/><circle cx='38' cy='16' r='3' fill='%23ff5a00'/></svg>"/>
+            <span class="badge">Observability</span>
+          </div>
+          <h3>Model Drift Monitoring</h3>
+          <p>Slice-based metrics, drift alerts, and retraining triggers for robust production ML.</p>
+          <div class="tags"><span class="tag">Evidently</span><span class="tag">Delta</span><span class="tag">Databricks</span></div>
+          <div class="actions">
+            <a class="cta" href="https://github.com/santhoshswargam/model-monitoring-dashboard" target="_blank" rel="noopener">Repo</a>
+            <a class="ghost" href="#" target="_blank" rel="noopener">Guide</a>
+          </div>
+          <div class="meta gh-badges" data-owner="santhoshswargam" data-repo="model-monitoring-dashboard">
+            <span class="chip">⭐ <span class="star-count">—</span></span>
+            <span class="chip">Last commit: <span class="last-commit">—</span></span>
+          </div>
+        </article>
+      </div>
+      <p class="subtitle" style="margin-top:10px">You can replace the inline SVG logos above with PNG/SVGs from your repos' <code>assets/</code> folder by swapping the <code>src</code> URLs.</p>
+    </div>
+  </section>
+    <div class="container" style="margin-top:-40px; margin-bottom:40px">
+      <details>
+        <summary>Assets folder structure for logos</summary>
+        <pre><code>assets/
+└─ logos/
+   ├─ optimizer.svg
+   ├─ feature-store.svg
+   ├─ rag-agent.svg
+   └─ monitoring.svg
+</code></pre>
+        <p>Place your PNG/SVG logos in <code>assets/logos/</code>. The cards will automatically use them; if a file is missing, the inline SVG fallback renders instead.</p>
+      </details>
+    </div>
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <p class="lead">Timeline</p>
+      <div class="timeline">
+        <div class="t-item">
+          <h3>Tiger Analytics — Toronto, Canada</h3>
+          <p>Senior Data Scientist / ML Engineer (April 2023 – Present)</p>
+        </div>
+        <div class="t-item">
+          <h3>Jio Platforms — India</h3>
+          <p>Machine Learning Engineer / Data Scientist (June 2020 – March 2023)</p>
+        </div>
+        <div class="t-item">
+          <h3>Tiger Analytics — India</h3>
+          <p>Data Scientist (July 2017 – May 2020)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog">
+    <div class="container">
+      <h2>Blog</h2>
+      <p class="lead">Writing on ML systems, agents, and impact.</p>
+      <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div class="card">
+          <h3>From Notebook to Production</h3>
+          <p>How to ship systems that last: feature stores, CI/CD, and observability.</p>
+          <a href="#" target="_blank">Read →</a>
+        </div>
+        <div class="card">
+          <h3>Evaluating Agentic Systems</h3>
+          <p>Behavioral evals, guardrails, and ROI tracking for LLM agents.</p>
+          <a href="#" target="_blank">Read →</a>
+        </div>
+        <div class="card">
+          <h3>RAG That Actually Works</h3>
+          <p>Data prep, chunking, retrieval strategies, and offline metrics.</p>
+          <a href="#" target="_blank">Read →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">You can reach me at:</p>
+      <p><a href="mailto:santhosh.swargam87@gmail.com">santhosh.swargam87@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Santhosh Swargam · Built with GitHub Pages · <a href="mailto:santhosh.swargam87@gmail.com">santhosh.swargam87@gmail.com</a></div>
+  </footer>
+
+  <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script>
+    const y=document.getElementById('y'); y.textContent=new Date().getFullYear();
+    function toggleNav(){const m=document.getElementById('mobileNav'); m.style.display=m.style.display==='flex'?'none':'flex'}
+
+    // ===== Theme toggle with persistence =====
+    const themeBtn = document.getElementById('themeBtn');
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme') || 'dark';
+    root.setAttribute('data-theme', stored);
+    themeBtn.textContent = stored === 'light' ? '☀️' : '🌙';
+    themeBtn.addEventListener('click', ()=>{
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeBtn.textContent = next === 'light' ? '☀️' : '🌙';
+    });
+
+    // ===== GitHub stars & last commit badges =====
+    async function hydrateGitHubBadges(){
+      const cards = document.querySelectorAll('.gh-badges');
+      for (const el of cards){
+        const owner = el.getAttribute('data-owner');
+        const repo = el.getAttribute('data-repo');
+        if(!owner || !repo) continue;
+        try{
+          const r = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+          if(!r.ok) throw new Error('GitHub API error');
+          const data = await r.json();
+          const stars = data.stargazers_count ?? '0';
+          const pushed = data.pushed_at ? new Date(data.pushed_at) : null;
+          const fmt = pushed ? pushed.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'2-digit'}) : '—';
+          el.querySelector('.star-count').textContent = stars;
+          el.querySelector('.last-commit').textContent = fmt;
+        }catch(e){
+          el.querySelector('.star-count').textContent = '—';
+          el.querySelector('.last-commit').textContent = '—';
+        }
+      }
+    }
+    hydrateGitHubBadges();
+
+    // ===== Parallax (B) — grid + glow respond to scroll =====
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hero = document.querySelector('.hero');
+    if(!prefersReduced && hero){
+      let ticking = false;
+      function onScroll(){
+        if(!ticking){
+          window.requestAnimationFrame(()=>{
+            const sy = window.scrollY || window.pageYOffset;
+            // Adjustable sensitivity (smaller numbers = smaller movement)
+            const g1 = -(sy * 0.03); // grid drift
+            const g2x = sy * 0.04;   // glow x
+            const g2y = sy * 0.02;   // glow y
+            root.style.setProperty('--gx1', g1 + 'px');
+            root.style.setProperty('--gy1', g1 + 'px');
+            root.style.setProperty('--gx2', g2x + 'px');
+            root.style.setProperty('--gy2', g2y + 'px');
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    }
+
+    // ===== Back to top bubble =====
+    const backBtn = document.getElementById('backToTop');
+    function toggleBackBtn(){
+      const sy = window.scrollY || window.pageYOffset;
+      backBtn.classList.toggle('visible', sy > 240);
+    }
+    window.addEventListener('scroll', toggleBackBtn, {passive:true});
+    toggleBackBtn();
+    backBtn.addEventListener('click', ()=>{
+      const behavior = prefersReduced ? 'auto' : 'smooth';
+      window.scrollTo({top:0, behavior});
+    });
+  </script>
 </body>
 </html>
